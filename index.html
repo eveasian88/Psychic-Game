@@ -19,46 +19,50 @@
 
   <script type="text/javascript">
 
-    var randomNumber = getRandomNumber (26);
-    var guess;
-    var guessCount = 0;
-    var correctGuess = false;
+// this one has syntax problems and does not run
 
-    function getRandomNumber(upper){
-      var num = Math.floor(Math.random()*upper)+1;
-      return num; 
+//     var randomNumber = getRandomNumber (26);
+//     var guess;
+//     var guessCount = 0;
+//     var correctGuess = false;
+
+//     function getRandomNumber(upper){
+//       var num = Math.floor(Math.random()*upper)+1;
+//       return num; 
+//     }
+
+//     loop(true) {
+//       guess=prompt("There are 26 letters in the alphabet. Focus on the letter that I am thinking.");
+
+//       guessCount += 1;
+
+//       if (parseInt(guess) === randomNumber);
+//         correctGuess = true;
+//         break;
+//       }
+//     }
+//     document.write('You guessed the letter!');
+//     document.write('it took you' + guessCount + 'tries to guess the letter.' + randomNumber);
+
+
+
+// this one runs but isn't what the homework asks for
+
+    var number = 8;
+    var myNumber = prompt("Can you guess my secret letter?");
+    var myNum = Number(myNumber);
+
+    if (myNum === number) {
+      alert("You guessed correctly. You may be physic!")
     }
 
-    loop(true) {
-      guess=prompt("There are 26 letters in the alphabet. Focus on the letter that I am thinking.");
-
-      guessCount += 1;
-
-      if (parseInt(guess) === randomNumber);
-        correctGuess = true;
-        break;
-      }
+    else if (myNum < Number) {
+      alert("Guess again!");
     }
-    document.write('<h2>You guessed the letter!</h2>');
-    document.write('it took you' + guessCount + 'tries to guess the letter.' + randomNumber);
 
-
-    // var number = 8;
-    // var myNumber = prompt("Can you guess my secret letter?");
-    // var myNum = Number(myNumber);
-
-    // if (myNum === number) {
-    //   alert("You guessed correctly. You may be physic!")
-    // }
-
-    // else if (myNum < Number) {
-    //   alert("Guess again!");
-    // }
-
-    // else {
-    //   alert("Try again!")
-    // }
-
+    else {
+      alert("Try again!")
+    }
 
 
   </script>
