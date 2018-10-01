@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Psychic Game</title>
-  </head>
-  <body>
 
-    <h1>GUESS WHAT LETTER I AM THINKING?</h1>
-
-    <script type="text/javascript">
-
-    document.onkeyup = function(event) {
-      // Determines which key was pressed.
-      var userGuess = event.key;
-  }
-    
-    // pseudo code first
+<head>
+  <meta charset="UTF-8">
+  <title>Physic Game</title>
+</head>
 
 
+<body>
 
-    </script>
+  <h1>Physic Game</h1>
 
-  </body>
+  <h2>Guess what letter I am thinking of _ ?</h2>
+  <h3>Wins:</h3>
+  <h3>Losses:</h3>
+  <h3>Guesses Left:</h3>
+  <h3>Your Guesses so Far:</h3>
+
+  <script type="text/javascript">
+
+    var letter = l;
+    var myLetter = prompt("Can you guess my secret letter?");
+    var myLet = letter(myLetter);
+
+    if (myLet === letter) {
+      alert("You guessed correctly. You may be physic!")
+    }
+
+    else if (myLet < letter) {
+      alert("Guess again!");
+    }
+
+    else {
+      alert("Try again!")
+    }
+
+
+
+  </script>
+
+
+</body>
+
 </html>
