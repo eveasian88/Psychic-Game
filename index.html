@@ -19,21 +19,45 @@
 
   <script type="text/javascript">
 
-    var letter = l;
-    var myLetter = prompt("Can you guess my secret letter?");
-    var myLet = letter(myLetter);
+    var randomNumber = getRandomNumber (26);
+    var guess;
+    var guessCount = 0;
+    var correctGuess = false;
 
-    if (myLet === letter) {
-      alert("You guessed correctly. You may be physic!")
+    function getRandomNumber(upper){
+      var num = Math.floor(Math.random()*upper)+1;
+      return num; 
     }
 
-    else if (myLet < letter) {
-      alert("Guess again!");
-    }
+    loop(true) {
+      guess=prompt("There are 26 letters in the alphabet. Focus on the letter that I am thinking.");
 
-    else {
-      alert("Try again!")
+      guessCount += 1;
+
+      if (parseInt(guess) === randomNumber);
+        correctGuess = true;
+        break;
+      }
     }
+    document.write('<h2>You guessed the letter!</h2>');
+    document.write('it took you' + guessCount + 'tries to guess the letter.' + randomNumber);
+
+
+    // var number = 8;
+    // var myNumber = prompt("Can you guess my secret letter?");
+    // var myNum = Number(myNumber);
+
+    // if (myNum === number) {
+    //   alert("You guessed correctly. You may be physic!")
+    // }
+
+    // else if (myNum < Number) {
+    //   alert("Guess again!");
+    // }
+
+    // else {
+    //   alert("Try again!")
+    // }
 
 
 
