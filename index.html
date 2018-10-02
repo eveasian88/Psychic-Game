@@ -3,60 +3,53 @@
 
 <head>
   <meta charset="UTF-8">
+
+  <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+
   <title>Physic Game</title>
 </head>
 
-
 <body>
 
-  <h1>Physic Game</h1>
+  <h1></h1>
+
+  <div class="container"></div>
+  <img id="title-image" src="./assets/images/Enlight403.jpg" width="900" height="450" alt="Physic Game">
+
+  <body class="container">
 
   <h2>Guess what letter I am thinking of _ ?</h2>
   <h3>Wins:</h3>
   <h3>Losses:</h3>
-  <h3>Guesses Left:</h3>
-  <h3>Your Guesses so Far:</h3>
+  <h4>Guesses Left:</h4>
+  <h4>Your Guesses so Far:</h4>
 
   <script type="text/javascript">
 
-// this one has syntax problems and does not run
-
-//     var randomNumber = getRandomNumber (26);
-//     var guess;
-//     var guessCount = 0;
-//     var correctGuess = false;
-
-//     function getRandomNumber(upper){
-//       var num = Math.floor(Math.random()*upper)+1;
-//       return num; 
-//     }
-
-//     loop(true) {
-//       guess=prompt("There are 26 letters in the alphabet. Focus on the letter that I am thinking.");
-
-//       guessCount += 1;
-
-//       if (parseInt(guess) === randomNumber);
-//         correctGuess = true;
-//         break;
-//       }
-//     }
-//     document.write('You guessed the letter!');
-//     document.write('it took you' + guessCount + 'tries to guess the letter.' + randomNumber);
 
 
 
 // this one runs but isn't what the homework asks for
+    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    var number = 8;
-    var myNumber = prompt("Can you guess my secret letter?");
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 10;
+    var guessedAlphabet = alphabet.length;
+
+    var myNumber = Math.floor(Math.random()*25) + 1;
     var myNum = Number(myNumber);
 
-    if (myNum === number) {
+    for (var i = 0; i < alphabet.length; i++) {
+      console.log ("I am thinking of the letter " + alphabet[i]);
+    }
+
+
+    if (myNumber === Math.floor(Math.random()*25) + 1) {
       alert("You guessed correctly. You may be physic!")
     }
 
-    else if (myNum < Number) {
+    else if (myNumber || Math.floor(Math.random()*25) + 1) {
       alert("Guess again!");
     }
 

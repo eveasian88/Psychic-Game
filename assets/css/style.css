@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    font-family: fantasy;
+    color: white;
+  }
+
+h2, {
+    font-size: 20px;
+    text-align: center;
+    color: white; 
+}
+
+.container {
+    text-align: center;  
+}
