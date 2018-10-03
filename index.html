@@ -2,104 +2,39 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
-
-  <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
-
-  <title>Physic Game</title>
+	<meta charset="UTF-8">
+	<title>Psychic Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
+  
+	<header id=banner>
+		<div class="container">
+			<img src="./assets/images/Enlight403.jpg" class="head-image" alt="Museum">
+			<h1>The Psychic Game</h1>
+		</div>
+	</header>
 
-  <h1></h1>
+	<div id="game" class="main-container">
+		<p>Guess what letter I'm thinking of!</p>
+		<p>Wins: 0</p>
+    <p>Losses: 0</p>
+    <p>Guesses left: 9</p>
+    <p>Your guesses so far: </p>
+	</div>
 
-  <div class="container">
-    <img id="title-image" src="./assets/images/Enlight403.jpg" width="1000" height="400" alt="Physic Game">
+	<div class="main-container">
+		<img src="./assets/images/crystalDown.jpg" class="side-image" alt="Crystal Ball">
+	</div>
 
-    <body class="container">
-
-      <h2>Guess what letter I am thinking of _ ?</h2>
-      <h3>Wins:</h3>
-      <h3>Losses:</h3>
-      <h3>Guesses Left:</h3>
-      <h3>Your Guesses Letter:</h3>
-  </div>
-
-
-  <script type="text/javascript">
-
-
-    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    var wins = 0;
-    var losses = 0;
-    var guessesLeft = 10;
-    var guessedLetters = [];
-
-    document.onkeyup = function (event) {
-      var yourGuess = event.key; // variable to capture user's guess
-      guessedLetters.push(yourGuess); // to capture user's letters entered
-      var psychicAns = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
-      var myNum = Number(myNumber);
-    }
-    // if your guess matches the psychic guess,
-    // a point is added to the wins tally and the guesses tally
-    for (var i = 0; i < alphabetLetters.length; i++) {
-
-    }
-    if (yourGuess === phychicAns) {
-      youWinn++;
-      guessesLeft = 9;
-    }
-    // if your letter does not match the psychic guess, your number of guesses remaining are deducted
-    else if (
-      guessesLeft--;)
-     )
-     // if guesses remaining equals 0, an increment is added to the losses tally
-    else if (
-      guessesLeft === 0;
-    youLose++;
-    guessesLeft = 9;)
-    }
-
-
-    // worked with TA with these formulas
-    for (var i = 0; i < alphabet.length; i++) {
-      console.log("I am thinking of the letter " + alphabet[i]);
-    }
-
-
-    if (myNumber === Math.floor(Math.random() * 25) + 1) {
-      alert("You guessed correctly. You may be physic!")
-    }
-
-    else if (myNumber || Math.floor(Math.random() * 25) + 1) {
-      alert("Guess again!");
-    }
-
-    else {
-      alert("Try again!")
-    }
-
-    var html =
-      "<h2>Guess what letter I am thinking of _ ?</h2>" +
-      "<h3>Wins: " + wins + "</h3>" +
-      "<h3>Losses: " + losses + "</h3>" +
-      "<h3>Guesses Left: " + numGuesses + "</h3>" +
-      "<h3>Your Guesses Letter: " + guessChoices.join(", ") + "</h3>";
-
-    document.querySelector("#game").innerHTML = html;
-
-
-  </script>
-
-
-<footer>
-    <div class="footer">
-        &copy; Susye Weng-Reeder 2018
+	 <footer>
+    <div class="container">
+      Copyright &copy; 2018 Susye Weng-Reeder
     </div>
-</footer>
-
+  </footer>
 
 </body>
-
 </html>
