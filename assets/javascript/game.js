@@ -48,7 +48,8 @@ else {
 	console.log(computerGuess[0]);
 }
 
-var html = "<p>Guess what letter I'm thinking of!</p>" +
+
+var html = "<p>Guess what letter I'm thinking of _ !</p>" +
           "<p>Wins: " + wins + "</p>" +
           "<p>Losses: " + losses + "</p>" +
           "<p>Guesses left: " + guessesLeft + "</p>" +
