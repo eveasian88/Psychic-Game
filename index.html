@@ -13,49 +13,70 @@
 
   <h1></h1>
 
-  <div class="container"></div>
-  <img id="title-image" src="./assets/images/Enlight403.jpg" width="900" height="450" alt="Physic Game">
+  <div class="container">
+    <img id="title-image" src="./assets/images/Enlight403.jpg" width="900" height="450" alt="Physic Game">
 
-  <body class="container">
+    <body class="container">
 
-  <h2>Guess what letter I am thinking of _ ?</h2>
-  <h3>Wins:</h3>
-  <h3>Losses:</h3>
-  <h4>Guesses Left:</h4>
-  <h4>Your Guesses so Far:</h4>
+      <!-- <h2>Guess what letter I am thinking of _ ?</h2>
+      <h3>Wins:</h3>
+      <h3>Losses:</h3>
+      <h4>Guesses Left:</h4>
+      <h4>Your Guesses so Far:</h4> -->
+  </div>
+
 
   <script type="text/javascript">
 
-
-
-
-// this one runs but isn't what the homework asks for
-    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
+    // this one runs but isn't what the homework asks for
+    var psychicLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     var wins = 0;
     var losses = 0;
     var guessesLeft = 10;
-    var guessedAlphabet = alphabet.length;
+    var guessedLetters = []; // array to capture user letters guessed
 
-    var myNumber = Math.floor(Math.random()*25) + 1;
+  document.onkeyup = function(event) {
+    var yourGuess = event.key; // variable to capture user's guess
+    guessedLetters.push(yourGuess); // to capture user's letters entered
+    var psychicAns = psychicLetters[Math.floor(Math.random() * psychicLetters.length)];
     var myNum = Number(myNumber);
-
-    for (var i = 0; i < alphabet.length; i++) {
-      console.log ("I am thinking of the letter " + alphabet[i]);
+     }
+    // if your guess matches the psychic guess,
+    // a point is added to the wins tally and the guesses tally
+     if (yourGuess === phychicAns) {
+       youWinn++;
+       guessesLeft = 9;
+     }
+     // if your letter does not match the psychic guess, your number of guesses remaining are deducted
+     else {
+       guessesLeft--;
+     }
+     // if guesses remaining equals 0, an increment is added to the losses tally
+    if {
+      guessesLeft === 0;
+      youLose++;
+      guessesLeft = 9;
     }
 
+    var html = "<p>Guess what letter I'm thinking of:</p>" + "<p>Wins: " + youWin + "</p>" + "<p>Loses: "+ youLose + "<p>Guesses Remaining: " + guessesLeft + "<p>Guessed Letter: " +  guessedLetters.join(', '); //Show guessed letters here
+    document.querySelector("#psychicAct").innerHTML = html;
+  }
+    // for (var i = 0; i < alphabet.length; i++) {
+    //   console.log("I am thinking of the letter " + alphabet[i]);
+    // }
 
-    if (myNumber === Math.floor(Math.random()*25) + 1) {
-      alert("You guessed correctly. You may be physic!")
-    }
 
-    else if (myNumber || Math.floor(Math.random()*25) + 1) {
-      alert("Guess again!");
-    }
+    // if (myNumber === Math.floor(Math.random() * 25) + 1) {
+    //   alert("You guessed correctly. You may be physic!")
+    // }
 
-    else {
-      alert("Try again!")
-    }
+    // else if (myNumber || Math.floor(Math.random() * 25) + 1) {
+    //   alert("Guess again!");
+    // }
+
+    // else {
+    //   alert("Try again!")
+    // }
 
 
   </script>
