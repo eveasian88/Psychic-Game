@@ -7,34 +7,40 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var lettersGuessed = [];
-var secretLetter = "a";
+var secretLetter; 
 
 
 // initial computer letter
 window.onload = function () {
-	secretLetter = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	secretLetter.push(compGuess);
-	console.log(secretLetter); // used for debugging
+	setGame()	
 }
 
-
+function setGame(){
+	guessesLeft = 9;
+	lettersGuessed = [];
+	secretLetter = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	console.log(secretLetter);
+}
 // game
 document.onkeyup = function (event) {
 	var playerGuess = event.key;
 	console.log(computerChoices);
 	if (computerChoices.includes(playerGuess)) {
 		console.log("good key");
-		
+		if (lettersGuessed.includes(playerGuess)) {
+			return;
+		}
 		lettersGuessed.push(playerGuess);
 
 		if ((playerGuess === secretLetter) && (guessesLeft > 0)) {
 			wins++;
-			alert("Wow, you guessed right! You may be psychic.");
-			guessesLeft = 9;
-			lettersGuessed.length = 0;
-			secretLetter.length = 0;
-			var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-			secretLetter.push(compGuess);
+			alert("Wow, you're right, the letter is " + secretLetter.toUpperCase() + "!!! You are psychic!!!");
+			// guessesLeft = 9;
+			// lettersGuessed.length = 0;
+			// secretLetter.length = 0;
+			// var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+			// secretLetter.push(compGuess);
+			setGame()
 			console.log(secretLetter);
 		}
 		else if ((playerGuess !== secretLetter) && (guessesLeft > 0)) {
@@ -46,7 +52,7 @@ document.onkeyup = function (event) {
 			lettersGuessed.length = 0;
 			secretLetter.length = 0;
 			var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-			secretLetter.push(compGuess);
+			secretLetter.push(compGuess); // syntax error in this line
 			console.log(secretLetter);
 		}
 		var html = "<p>Guess what letter I'm thinking of _ !</p>" +
@@ -59,9 +65,9 @@ document.onkeyup = function (event) {
 	}
 
 	else {
-		alert("press alphabet letters only")
+		alert("please press alphabet letters only")
 	}
 	console.log(secretLetter[0]); //used for debugging
 
-	
+
 }
