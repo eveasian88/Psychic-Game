@@ -11,8 +11,11 @@ body {
 
 
 footer {
+    position: fixed;
+    width: 100%;
     text-align: center;
     font-size: 10px;
     color: white; 
 }  
+    
 
