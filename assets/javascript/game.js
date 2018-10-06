@@ -17,27 +17,34 @@ function setGame() {
 	guessesLeft = 9;
 	lettersGuessed = [];
 	secretLetter = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	console.log(secretLetter);
+	// this checks for bugs
+	// console.log(secretLetter);
 }
 
 // game
 document.onkeyup = function (event) {
 	var playerGuess = event.key;
-	console.log(computerChoices);
+	// this checks for bugs
+	// console.log(computerChoices);
 
 	if (computerChoices.includes(playerGuess)) {
-		console.log("good key");
+		// this checks for bugs
+		// console.log("good key");
 
-		if (lettersGuessed.includes(playerGuess)) {
+		if (lettersGuessed.includes(playerGuess)) { 
 			return;
 		}
 		lettersGuessed.push(playerGuess);
 
 		if ((playerGuess === secretLetter) && (guessesLeft > 0)) {
 			wins++;
+			var notAPsychicSound = new Audio("assets/sound/psychicMusic.m4a");
+			notAPsychicSound.play();
+
 			alert("Wow, you're right, the letter is " + secretLetter.toUpperCase() + "!!! You are psychic!!!");
 			setGame()
-			console.log(secretLetter);
+			// this checks for bugs
+			// console.log(secretLetter);
 		}
 
 		else if ((playerGuess !== secretLetter) && (guessesLeft > 0)) {
@@ -51,7 +58,8 @@ document.onkeyup = function (event) {
 			secretLetter.length = 0;
 			var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 			secretLetter.push(compGuess);
-			console.log(secretLetter);
+			// this checks for bugs
+			// console.log(secretLetter);
 		}
 
 		var html = "<p>Guess what letter I'm thinking of _ !</p>" +
@@ -66,7 +74,6 @@ document.onkeyup = function (event) {
 	else {
 		alert("please press alphabet letters only")
 	}
-
-	console.log(secretLetter[0]); //used for debugging
-
+	// this checks for bugs
+	// console.log(secretLetter[0]); 
 }
