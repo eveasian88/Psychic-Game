@@ -38,8 +38,8 @@ document.onkeyup = function (event) {
 
 		if ((playerGuess === secretLetter) && (guessesLeft > 0)) {
 			wins++;
-			var notAPsychicSound = new Audio("assets/sound/psychicMusic.m4a");
-			notAPsychicSound.play();
+			var psychicMusic = new Audio("assets/sound/psychicMusic.m4a");
+			psychicMusic.play();
 
 			alert("Wow, you're right, the letter is " + secretLetter.toUpperCase() + "!!! You are psychic!!!");
 			setGame()
